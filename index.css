@@ -1,0 +1,55 @@
+body
+{
+    background-color: #EBBA99;
+}
+
+h1
+{
+    text-align: center;
+}
+
+.navigation
+{
+    /* -------- gradient --------*/
+    /* IE10 */
+    background-image: -ms-linear-gradient(top, #7A0000 0%, #B80000 100%);
+    /* Mozilla Firefox */ 
+    background-image: -moz-linear-gradient(top, #7A0000 0%, #B80000 100%);
+    /* Opera */
+    background-image: -o-linear-gradient(top, #7A0000 0%, #B80000 100%);
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #B80000), color-stop(1, #B80000));
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-linear-gradient(top, #7A0000 0%, #B80000 100%);
+    /* Proposed W3C Markup */
+    background-image: linear-gradient(top, #7A0000 0%, #B80000 100%);
+    /* -------- end-gradient --------*/
+
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.navigation a:link
+{
+    text-decoration: underline;
+    color: #99FF66;
+}
+
+.navigation a:visited
+{
+    text-decoration: underline;
+    color: #99FF66;
+}
+
+a:link
+{
+    text-decoration: underline;
+    color: #006600;
+}
+
+a:visited
+{
+    text-decoration: underline;
+    color: #006600;
+}

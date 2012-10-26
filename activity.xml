@@ -1,0 +1,25 @@
+<activities>
+    <activity>
+	<name>一統天下：秦始皇帝的永恆國度</name>
+	<date>1/1/2012</date>
+	<time>00:00</time>
+	<info><a href="http://firstemperor.lcsd.gov.hk/tc/index.php">http://firstemperor.lcsd.gov.hk/tc/index.php</a></info>
+	<apply>
+	    <q name="name">
+		<text>What is your name?</text>
+		<type>text</type>
+	    </q>
+	    <q name="class">
+		<text>What is your class?</text>
+		<type>text</type>
+	    </q>
+	    <q name="number">
+		<text>What is your class number?</text>
+		<type>text</type>
+	    </q>
+	    <end>1/11/2012 23:59</end>
+	    <participants>
+	    </participants>
+	</apply>
+    </activity>
+</activities>

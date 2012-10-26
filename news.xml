@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<news>
+    <sub_news>
+	<type>text</type>
+	<title>Online Application Form Starts to Work!</title>
+	<text>Please <a href="activity.php">Click here</a></text>
+    </sub_news>
+    <sub_news>
+	<type>activity</type>
+	<item>1</item>
+    </sub_news>
+<sub_news><type>text</type><title>Our Facebook page has been opened!</title><text>Our Facebook page has been opened. In this page, you may see the latest activities and news of our society.
+
+You may enter our page by the following ways:
+
+1. Type "Civic Education Society@THMSS" on the search bar in Facebook.
+2. Copy our address http://www.facebook.com/thmsscivicedusoc to the address bar.
+
+Be quick to add "like" on our Facebook page!</text></sub_news></news>
