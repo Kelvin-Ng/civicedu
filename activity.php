@@ -51,7 +51,7 @@ else if ($_REQUEST['apply'] == 'Apply')
     }
     $xml->asXML('activity.xml') or die('Fail to open the data file');
 ?>
-You have already applied for this activity. Thank you for your participation.<br>
+You have applied for this activity successfully. Thank you for your participation.<br>
 You will be redirected to last page after 5 seconds.
 <script>
     function redirect()
