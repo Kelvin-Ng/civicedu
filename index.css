@@ -1,6 +1,6 @@
 body
 {
-    background-color: #EBBA99;
+    background-color: #99CCFF;
 }
 
 h1
@@ -12,17 +12,17 @@ h1
 {
     /* -------- gradient --------*/
     /* IE10 */
-    background-image: -ms-linear-gradient(top, #7A0000 0%, #B80000 100%);
+    background-image: -ms-linear-gradient(top, #00007A 0%, #0000B8 100%);
     /* Mozilla Firefox */ 
-    background-image: -moz-linear-gradient(top, #7A0000 0%, #B80000 100%);
+    background-image: -moz-linear-gradient(top, #00007A 0%, #0000B8 100%);
     /* Opera */
-    background-image: -o-linear-gradient(top, #7A0000 0%, #B80000 100%);
+    background-image: -o-linear-gradient(top, #00007A 0%, #0000B8 100%);
     /* Webkit (Safari/Chrome 10) */
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #B80000), color-stop(1, #B80000));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0000B8), color-stop(1, #0000B8));
     /* Webkit (Chrome 11+) */
-    background-image: -webkit-linear-gradient(top, #7A0000 0%, #B80000 100%);
+    background-image: -webkit-linear-gradient(top, #00007A 0%, #0000B8 100%);
     /* Proposed W3C Markup */
-    background-image: linear-gradient(top, #7A0000 0%, #B80000 100%);
+    background-image: linear-gradient(top, #00007A 0%, #0000B8 100%);
     /* -------- end-gradient --------*/
 
     text-align: center;

@@ -9,10 +9,10 @@ $file_name = $file_name[count($file_name) - 1];
 	<link rel="stylesheet" href="index.css">
     </head>
     <body>
-	<h1>Civic Education Society</h1>
+	<p align="center"><img src="WEB_HEAD.png"></p>
 	<p class="navigation">
 	    <a href="index.php" <?echo ($file_name == 'index.php') ? 'style="color: #FFFFFF"' : ''?>>Home</a>&nbsp&nbsp
-	    <a href="activity.php" <?echo ($file_name == 'activity.php') ? 'style="color: #FFFFFF"' : ''?>>Our activities and </a><a href="activity.php" style="color: #00FF00">application forms</a>&nbsp&nbsp
+	    <a href="activity.php" <?echo ($file_name == 'activity.php') ? 'style="color: #FFFFFF"' : ''?>>Our activities</a>&nbsp&nbsp<a href="activity.php" style="color: #00FF00">application forms</a>&nbsp&nbsp
 	    <a href="Annual_Plan.html">Annual Plan</a>&nbsp&nbsp
 <?
 if (!$_COOKIE['civicedu'])
