@@ -109,6 +109,7 @@ if ($_COOKIE['civicedu'])
 include "header.php";
 $lastmod = max(getlastmod(), filemtime('news.xml'), filemtime('activity.xml'));
 ?>
+	<link rel="stylesheet" type="text/css" href="index.css" />
 	<h2>News</h2><?echo $_COOKIE['civicedu'] ? '<button onclick="add_news()">+</button>' : ''?>
 	<a id="add_new_news"></a>
 	<a id="new_news"></a>
@@ -128,16 +129,18 @@ for ($i = $news_xml->count() - 1; $i >= 0; $i--)
     if ($news->type == 'text')
     {
 ?>
-	<h3><?echo $news->title?></h3>
+	<h3 class="title"><?echo $news->title?></h3>
+	<p class="contents">
 	<?echo str_replace("\n", '<br>', substr($news->text->asXML(), 6, -7))?>
+	</p>
 <?
     }
     elseif ($news->type == 'activity')
     {
 	$activity = $activity_xml->activity[$news->item - 1];
 ?>
-	<h3><?echo $activity->name?> is going to be held!</h3>
-	For futher information, please <a href="activity.php?activity=<?echo $news->item?>">Click here</a>
+	<h3 class="title"><?echo $activity->name?> is going to be held!</h3>
+	<p class="contents">For futher information, please <a href="activity.php?activity=<?echo $news->item?>">Click here</a></p>
 <?
     }
 ?>

@@ -18,7 +18,7 @@ else
 <?
     }
 ?>
-	<b>This is the area of committee members. If you are one of the committee members, please login with the password.</b>
+	<b class="contents">This is the area of committee members. If you are one of the committee members, please login with the password.</b>
 	<form action="login.php" method="post">
 	    <input name="pwd" type="password"><br>
 	    <br>

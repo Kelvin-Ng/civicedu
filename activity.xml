@@ -6,18 +6,22 @@
 	<info><a href="http://firstemperor.lcsd.gov.hk/tc/index.php">http://firstemperor.lcsd.gov.hk/tc/index.php</a></info>
 	<apply>
 	    <q name="name">
+		<short>Name</short>
 		<text>What is your name?</text>
 		<type>text</type>
 	    </q>
 	    <q name="class">
+		<short>Class</short>
 		<text>What is your class?</text>
 		<type>text</type>
 	    </q>
 	    <q name="number">
+		<short>Class No.</short>
 		<text>What is your class number?</text>
 		<type>text</type>
 	    </q>
 		<q name="member_yn">
+		<short>Member?</short>
 		<text>Are you a member of Civic Education Society in academic year 2012-2013?</text>
 		<type>radio</type>
 		<option>Yes</option>

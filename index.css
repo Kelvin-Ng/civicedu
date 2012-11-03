@@ -1,3 +1,4 @@
+/*header.php*/
 body
 {
     background-color: #99CCFF;
@@ -33,23 +34,49 @@ h1
 .navigation a:link
 {
     text-decoration: underline;
+	font-family: Arial, Helvetica, sans-serif;
     color: #99FF66;
 }
 
 .navigation a:visited
 {
     text-decoration: underline;
+	font-family: Arial, Helvetica, sans-serif;
     color: #99FF66;
 }
 
 a:link
 {
     text-decoration: underline;
+	font-family: Arial, Helvetica, sans-serif;
     color: #006600;
 }
 
 a:visited
 {
     text-decoration: underline;
+	font-family: Arial, Helvetica, sans-serif;
     color: #006600;
+}
+/*index.php*/
+h2
+{
+color:#FFFF00;
+font-family:"Arial Black";
+font-size:20px;
+}
+.title
+{
+color:#000066;
+font-family:Arial, Helvetica, sans-serif;
+font-size:16px;
+text-align:left;
+}
+.contents
+{
+color:#CC0066;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-weight:bold;
+font-size:16px;
+text-align:left;
 }

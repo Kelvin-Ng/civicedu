@@ -5,8 +5,7 @@ $fh = fopen('activity.xml', 'r');
 $contents = fread($fh, filesize('activity.xml'));
 fclose($fh);
 $xml = new SimpleXMLElement($contents);
-if ($_GET['activity'] == '')
-{
+$node = $xml->activity[$_GET['activity'] - 1];
 ?>
 <h3>Participants</h3>
 <table>

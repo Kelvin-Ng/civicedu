@@ -1,3 +1,8 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="activity.css">
+</head>
+<body>
 <?
 include "header.php";
 $lastmod = max(getlastmod(), filemtime('activity.xml'));
@@ -8,13 +13,13 @@ $xml = new SimpleXMLElement($contents);
 if ($_GET['activity'] == '')
 {
 ?>
-<h2>Our activities</h2>
-<b>You may click 'Apply' to apply for joining the activities!</b><br><br>
+<h3>Our activities</h3>
+<b class="info">You may click 'Apply' to apply for joining the activities!</b><br><br>
 <table>
     <tr>
-	<td><a>Name</a></td>
-	<td><a>Date</a></td>
-	<td><a>Time</a></td>
+	<td class="topic"><a>Name</a></td>
+	<td class="topic"><a>Date</a></td>
+	<td class="topic"><a>Time</a></td>
     </tr>
 <?
     for ($i = $xml->count() - 1; $i >= 0; $i--)
@@ -22,20 +27,23 @@ if ($_GET['activity'] == '')
 	$node = $xml->activity[$i];
 ?>
     <tr>
-	<td><a><?echo $node->name?></a></td>
-	<td><a><?echo $node->date?></a></td>
-	<td><a><?echo $node->time?></a></td>
+	<td class="activity"><a><?echo $node->name?></a></td>
+	<td class="activity"><a><?echo $node->date?></a></td>
+	<td class="activity"><a><?echo $node->time?></a></td>
 <?
 	$deadline = date_create_from_format('j/n/Y H:i', $node->apply->end);
 	if ($deadline->getTimestamp() >= time())
 	{
 ?>
-	<td><a href="activity.php?activity=<?echo $i + 1?>">Apply</a></td>
+	<td class="info"><a href="activity.php?activity=<?echo $i + 1?>">Apply</a></td>
     </tr>
 <?
 	}
     }
 ?>
+<script type="text/javascript">
+alert("You may apply our activities online! Just click 'Apply' button and fill in the application form! Try it!")
+</script>
 </table>
 <?
 }
@@ -51,8 +59,8 @@ else if ($_REQUEST['apply'] == 'Apply')
     }
     $xml->asXML('activity.xml') or die('Fail to open the data file');
 ?>
-You have applied for this activity successfully. Thank you for your participation.<br>
-You will be redirected to last page after 5 seconds.
+<p class="info">You have applied for this activity successfully. Thank you for your participation.<br>
+You will be redirected to last page after 5 seconds.</p>
 <script>
     function redirect()
     {
@@ -68,20 +76,20 @@ else
 ?>
 <table>
     <tr>
-	<td><a>Activity Name:</a></td>
-	<td><a><?echo $node->name?></a></td>
+	<td class="type"><a>Activity Name:</a></td>
+	<td class="info"><a><?echo $node->name?></a></td>
     </tr>
     <tr>
-	<td><a>Date:</a></td>
-	<td><a><?echo $node->date?></a></td>
+	<td class="type"><a>Date:</a></td>
+	<td class="info"><a><?echo $node->date?></a></td>
     </tr>
     <tr>
-	<td><a>Time:</a></td>
-	<td><a><?echo $node->time?></a></td>
+	<td class="type"><a>Time:</a></td>
+	<td class="info"><a><?echo $node->time?></a></td>
     </tr>
     <tr>
-	<td><a>Further Information:</a></td>
-	<td><?echo str_replace("\n", '<br>', substr($node->info->asXML(), 6, -7))?></td>
+	<td class="type"><a>Further Information:</a></td>
+	<td class="info"><?echo str_replace("\n", '<br>', substr($node->info->asXML(), 6, -7))?></td>
     </tr>
 </table>
 <br><br>
@@ -94,7 +102,7 @@ else
 	$question = $node->apply[0]->q[$i];
 ?>
 	<tr>
-	    <td><label><?echo $question->text?></label></td>
+	    <td class="type"><label><?echo $question->text?></label></td>
 <?
 	if ($question->type == 'radio')
 	{
@@ -114,7 +122,7 @@ else
 	else
 	{
 ?>
-	    <td><input name="<?echo $question->attributes()->name?>" type="<?echo $question->type?>" value="<?echo $question->default?>"></td>
+	    <td class="type"><input name="<?echo $question->attributes()->name?>" type="<?echo $question->type?>" value="<?echo $question->default?>"></td>
 <?
 	}
 ?>
@@ -126,37 +134,9 @@ else
     <br><br>
     <input name="apply" type="submit" value="Apply">
 </form>
-<h3>Participants</h3>
-<table>
-    <tr>
-<?
-    $item_num = $node->apply->q->count();
-    for ($i = 0; $i < $item_num; $i++)
-    {
-?>
-	<td><?echo $node->apply[0]->q[$i]->attributes()->name?></td>
-<?
-    }
-    $participants = $node->apply[0]->participants;
-    for ($i = 0; $i < $participants[0]->count(); $i++)
-    {
-?>
-    <tr>
-<?
-	$items = $participants->participant[$i]->children();
-	for ($j = 0; $j < $item_num; $j++)
-	{
-?>
-	<td><?echo $items[$j]?></td>
-<?
-	}
-?>
-    </tr>
-<?
-    }
-?>
-</table>
 <?
 }
 include "footer.php";
 ?>
+</body>
+</html>
