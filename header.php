@@ -24,8 +24,8 @@ if (!$_COOKIE['civicedu'])
 else
 {
 ?>
-	    <a href="logout.php">Logout</a>
-	    <a href="participants.php" <?echo ($file_name == 'participants.php') ? 'style="color: #FFFFFF"' : ''?>>Particiapnts</a>
+	    <a href="participants.php" <?echo ($file_name == 'participants.php') ? 'style="color: #FFFFFF"' : ''?>>Particiapnts</a>&nbsp&nbsp
+	    <a href="logout.php">Logout</a>	    
 <?
 }
 ?>
