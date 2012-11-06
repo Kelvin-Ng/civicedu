@@ -45,7 +45,7 @@ $node = $xml->activity[$_GET['activity'] - 1];
 <h3>Participants</h3>
 <table>
 <?
-    activities_num = $node->count();
+    $activities_num = $xml->activity->count();
     for ($a = 0; $a < $activities_num; $a++)
     {
 ?>
@@ -72,9 +72,8 @@ $node = $xml->activity[$_GET['activity'] - 1];
 	for ($i = 0; $i < $participants[0]->count(); $i++)
 	{
 ?>
-	    <tr>
 <?
-	    echo $_COOKIE['civicedu'] ? "<div id=\"participants$i\">" : '';
+	    echo $_COOKIE['civicedu'] ? "<tr id=\"participants$i\">" : '';
 	    $items = $participants[0]->participant[$i]->children();
 	    for ($j = 0; $j < $item_num; $j++)
 	    {
@@ -85,16 +84,15 @@ $node = $xml->activity[$_GET['activity'] - 1];
 ?>
 	    <td><?echo $_COOKIE['civicedu'] ? "<br><button onclick=\"remove_participants($i)\">-</button>" : ''?></td>
 <?
-	    echo $_COOKIE['civicedu'] ? "</div>" : '';
+	    echo $_COOKIE['civicedu'] ? "</tr>" : '';
 ?>
-            </tr>
 <?
         }
 ?>
-</table>
 <?
     }
 ?>
+</table>
 <?
 }
 ?>

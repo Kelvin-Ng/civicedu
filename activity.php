@@ -10,6 +10,68 @@ $fh = fopen('activity.xml', 'r');
 $contents = fread($fh, filesize('activity.xml'));
 fclose($fh);
 $xml = new SimpleXMLElement($contents);
+/*Starting modifying 'add activities'*/
+if ($_COOKIE['civicedu'])
+{
+?>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script>
+    var num = 0;
+    var activity_form = jQuery('<form/>', {
+			method: 'post',
+			action: 'javascript:',
+			style: 'display: none'
+		    })
+		    .append('<input name="add_new_activity" type="submit" value="submit">');
+    function add_activity()
+    {
+	num++;
+	var add_new_activity_form = activity_form.clone();
+	add_new_activity_form.attr('id', 'add_new_activity' + num);
+	$('#add_new_activity' + num + ' > input[type="submit"]').before('<br><br><label>Name: </label><input name="name" type="text"><br><br><label>Date:</label><input name="date" type="text"><br><br><label>Time: </label><input name="time" type="text"><br><br><label>Further Information: </label><textarea name="info"></textarea><br><br><label>Application Ended: </label><input name="end" type="text"><br>');
+	add_new_activity_form.prependTo('#add_new_activity').fadeIn();
+	add_new_activity_form.submit(function()
+	{
+	   	var name = add_new_activity_form.children('input[name="name"]').val();
+		var date = add_new_activity_form.children('input[name="date"]').val();
+		var time = add_new_activity_form.children('input[name="time"]').val();
+		var info = add_new_activity_form.children('input[name="info"]').val();
+		var end = add_new_activity_form.children('input[name="end"]').val();
+		if (name != '' && date != '' && time != '' && info != '' && end != '')
+		{
+		    submit_form('name=' + name + '&date=' + date + '&time=' + time + '&info=' + info + '&end=' +end);
+		    add_new_activity_form.remove();
+		}		
+	});
+    }
+    function submit_form(s)
+    {
+	if (window.XMLHttpRequest)
+	{
+	    request = new XMLHttpRequest();
+	}
+	else if (window.ActiveXObject)
+	{
+	    request = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	request.open('POST', 'add_activity.php', true);
+	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	request.send(s);
+	request.onreadystatechange = function()
+	{
+	    if (request.readyState == 4)
+	    {
+		$('#new_activity').prepend($('<div id="new_activity_div">' + request.responseText + '</div>').hide());
+		$('#new_activity_div:first').show('slow');
+	    }
+	};
+    }
+</script>
+<?
+}
+/*Ending modifying 'add activities'*/
+?>
+<?
 if ($_GET['activity'] == '')
 {
 ?>
@@ -21,9 +83,11 @@ if ($_GET['activity'] == '')
 	<td class="topic"><a>Date</a></td>
 	<td class="topic"><a>Time</a></td>
     </tr>
+<?echo $_COOKIE['civicedu'] ? '<button onclick="add_activity()">+</button>' : ''?>
 <?
     for ($i = $xml->count() - 1; $i >= 0; $i--)
     {
+	echo $_COOKIE['civicedu'] ? "<div id=\"activity$i\">" : '';
 	$node = $xml->activity[$i];
 ?>
     <tr>
