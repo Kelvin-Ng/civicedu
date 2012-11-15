@@ -2,9 +2,10 @@
 <activities>
     <activity>
 	<name>&#x4E00;&#x7D71;&#x5929;&#x4E0B;&#xFF1A;&#x79E6;&#x59CB;&#x7687;&#x5E1D;&#x7684;&#x6C38;&#x6046;&#x570B;&#x5EA6;</name>
-	<date>17/11/2012</date>
-	<time>11:00</time>
-	<info><a href="http://firstemperor.lcsd.gov.hk/tc/index.php">http://firstemperor.lcsd.gov.hk/tc/index.php</a></info>
+	<date>24/11/2012</date>
+	<time>10:45-13:00</time>
+	<venue>Hong Kong Museum of History</venue>
+	<info><a href="http://firstemperor.lcsd.gov.hk/tc/index.php">http://firstemperor.lcsd.gov.hk/tc/index.php</a> and <a href="https://www.facebook.com/events/426583487396213/">https://www.facebook.com/events/426583487396213/</a></info>
 	<apply>
 	    <q name="name">
 		<short>Name</short>
@@ -28,9 +29,9 @@
 		<option>Yes</option>
 		<option>No</option>
 		</q>
-	    <end>09/11/2012 23:59</end>
+	    <end>21/11/2012 23:59</end>
 	    <participants>
 	    </participants>
 	</apply>
     </activity>
-</activities>
+<activity><name>The North District Civic Day (Application is NOT necessary)</name><date>08/12/2012</date><time>13:00</time><venue>undefined</venue><info>undefined</info><apply><q name="name"><short>Name</short><text>What is your name?</text><type>text</type></q><q name="class"><short>Class</short><text>What is your class?</text><type>text</type></q><q name="number"><short>Class No.</short><text>What is your class number?</text><type>text</type></q><q name="member_yn"><short>Member?</short><text>Are you a member of Civic Education Society in academic year 2012-2013?</text><type>radio</type><option>Yes</option><option>No</option></q><end>01/01/2012 23:59</end><participants/></apply></activity></activities>

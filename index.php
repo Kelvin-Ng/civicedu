@@ -109,8 +109,7 @@ if ($_COOKIE['civicedu'])
 include "header.php";
 $lastmod = max(getlastmod(), filemtime('news.xml'), filemtime('activity.xml'));
 ?>
-	<link rel="stylesheet" type="text/css" href="index.css" />
-	<h2>News</h2><?echo $_COOKIE['civicedu'] ? '<button onclick="add_news()">+</button>' : ''?>
+	<link rel="stylesheet" type="text/css" href="index.css" />	<h2>News</h2><?echo $_COOKIE['civicedu'] ? '<button onclick="add_news()">+</button>' : ''?>
 	<a id="add_new_news"></a>
 	<a id="new_news"></a>
 <?

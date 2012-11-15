@@ -28,20 +28,20 @@ if ($_COOKIE['civicedu'])
 	num++;
 	var add_new_activity_form = activity_form.clone();
 	add_new_activity_form.attr('id', 'add_new_activity' + num);
-	$('#add_new_activity' + num + ' > input[type="submit"]').before('<br><br><label>Name: </label><input name="name" type="text"><br><br><label>Date:</label><input name="date" type="text"><br><br><label>Time: </label><input name="time" type="text"><br><br><label>Further Information: </label><textarea name="info"></textarea><br><br><label>Application Ended: </label><input name="end" type="text"><br>');
+	/*$('#add_new_activity' + num + ' > input[type="submit"]')*/add_new_activity_form.children('input[type="submit"]').before('<br><br><label>Name: </label><input name="name" type="text"><br><br><label>Date:</label><input name="date" type="text"><br><br><label>Time: </label><input name="time" type="text"><br><br><label>Further Information: </label><textarea name="info"></textarea><br><br><label>Application Ended: </label><input name="end" type="text"><br>');
 	add_new_activity_form.prependTo('#add_new_activity').fadeIn();
 	add_new_activity_form.submit(function()
 	{
-	   	var name = add_new_activity_form.children('input[name="name"]').val();
-		var date = add_new_activity_form.children('input[name="date"]').val();
-		var time = add_new_activity_form.children('input[name="time"]').val();
-		var info = add_new_activity_form.children('input[name="info"]').val();
-		var end = add_new_activity_form.children('input[name="end"]').val();
-		if (name != '' && date != '' && time != '' && info != '' && end != '')
-		{
-		    submit_form('name=' + name + '&date=' + date + '&time=' + time + '&info=' + info + '&end=' +end);
-		    add_new_activity_form.remove();
-		}		
+	    var name = add_new_activity_form.children('input[name="name"]').val();
+	    var date = add_new_activity_form.children('input[name="date"]').val();
+	    var time = add_new_activity_form.children('input[name="time"]').val();
+	    var info = add_new_activity_form.children('input[name="info"]').val();
+	    var end = add_new_activity_form.children('input[name="end"]').val();
+	    if (name != '' && date != '' && time != '' && info != '' && end != '')
+	    {
+		submit_form('name=' + name + '&date=' + date + '&time=' + time + '&info=' + info + '&end=' +end);
+		add_new_activity_form.remove();
+	    }		
 	});
     }
     function submit_form(s)
@@ -77,15 +77,17 @@ if ($_GET['activity'] == '')
 ?>
 <h3>Our activities</h3>
 <b class="info">You may click 'Apply' to apply for joining the activities!</b><br><br>
+<a id="new_activity"></a>
 <table>
     <tr>
 	<td class="topic"><a>Name</a></td>
 	<td class="topic"><a>Date</a></td>
 	<td class="topic"><a>Time</a></td>
     </tr>
+    <a id="add_new_activity"></a>
 <?echo $_COOKIE['civicedu'] ? '<button onclick="add_activity()">+</button>' : ''?>
 <?
-    for ($i = $xml->count() - 1; $i >= 0; $i--)
+    for ($i = $xml->activity->count()-1; $i >= 0; $i--)
     {
 	echo $_COOKIE['civicedu'] ? "<div id=\"activity$i\">" : '';
 	$node = $xml->activity[$i];

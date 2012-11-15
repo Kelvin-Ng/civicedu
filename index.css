@@ -1,8 +1,16 @@
 /*header.php*/
 body
 {
-    background-color: #99CCFF;
+	/*background-color:#99CCFF;*/
+	background:url(background_web_1.png);
+	/*-moz-background-size:100% 100%;
+	background-size:100% 100%;
+	background-repeat:no-repeat;*/
+	
+	width: auto;
+	height: auto;
 }
+
 
 h1
 {
